@@ -25,6 +25,7 @@ body {
   border: none;
   line-height: 1.17;
   display: flex;
+
 }
 .button {
   color: var(--brand-color);
@@ -65,8 +66,10 @@ body {
   background-color: var(--active-color);
   color: #ffffff;
   border: none;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.08),
-    0px 3px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.08);
+  0px 3px 1px rgba(0, 0, 0, 0.1);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link:hover,
@@ -78,6 +81,18 @@ body {
 .link-maps-footer:hover,
 .link-maps-footer:focus {
   color: var(--active-color);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.now::after{
+  content: "";
+  position: absolute;
+  width: 56px;
+  height: 4px;
+  border: 1px solid rgba(33, 150, 243, 1);
+  border-radius: 2px;
+  background-color: var(--active-color);
+  margin-top: 28px;
 }
 a {
   text-decoration: none;
@@ -155,7 +170,7 @@ ul {
       rgba(47, 48, 58, 0.4),
       rgba(47, 48, 58, 0.4)
     ),
-    url(/goit-markup-hw-04/images/img-background.jpeg);
+    url(/goit-markup-hw-05/images/img-background.jpeg);
 
   display: flex;
   flex-flow: column;
@@ -239,6 +254,7 @@ header {
 
 .agencja {
   padding: 0px 46px 0px 93px;
+  position: relative;
 }
 .portfolio {
   padding: 0px 46px 0px 0px;
@@ -269,8 +285,28 @@ header {
   gap: 30px;
 }
 .what-we-doing-img {
+  position: relative;
+  overflow: hidden;
   flex-basis: calc((100%-2 * 30px) / 3);
 }
+.what-we-doing-img > .what-we-do-description{
+  position: absolute;
+}
+ .what-we-do-description{
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.17;
+  letter-spacing: 0.03em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background-color: rgba(47, 48, 58, 0.8);
+  height: 70px;
+  width: 370px;
+ bottom: 0;
+}
+
 .our-team-list {
   display: flex;
   padding: 0px 15px;
@@ -307,6 +343,8 @@ header {
   cursor: pointer;
   box-shadow: 1px 4px 6px 0px #00000016, 0px 0px 4px 0px #00000006,
     0px 1px 1px 0px #00000012;
+     transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .adress {
   display: flex;
@@ -331,6 +369,8 @@ img {
 .icon-mail:hover,
 .icon-mail:focus {
   fill: var(--active-color);
+   transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icon-lorem {
   display: flex;
@@ -361,6 +401,8 @@ img {
   background-color: var(--active-color);
   fill: #ffffff;
   cursor: pointer;
+   transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .our-clients-members {
   display: flex;
@@ -381,6 +423,8 @@ img {
 .clients-icon:focus {
   fill: var(--active-color);
   cursor: pointer;
+   transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .come-to-us-head {
   font-size: 14px;
@@ -414,4 +458,70 @@ img {
   background-color: var(--active-color);
   fill: #ffffff;
   cursor: pointer;
+   transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop{
+  transition: visibility 0.4s linear, opacity 0.4s linear;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+}
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+.modal{
+  transition: transform 0.3s linear;
+  position: absolute;
+  width: 528px;
+  height:581px;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 4px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  display: flex;
+flex-direction: row-reverse;
+  align-items: baseline;
+}
+.modal-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+    margin: 7px 8px 0 0;
+   border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 1);
+ 
+}
+.is-hidden .modal{
+   transform: translate(-50%, -50%) scale(0)
+}
+.product-bgn{
+  position: relative;
+  overflow: hidden;
+}
+.product-description {
+  margin: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  background: rgba(33, 150, 243, 0.9);
+ transform: translateY(100%);
+}
+.product-img:hover .product-description{
+  transform: translateY(0%);
+       transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }

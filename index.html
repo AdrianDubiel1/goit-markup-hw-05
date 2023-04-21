@@ -24,17 +24,21 @@
     <header>
       <div class="container">
         <div class="header">
-          <a class="link logo" href="/goit-markup-hw-04/"
+          <a class="link logo" href="/goit-markup-hw-05/"
             ><span class="logo-first">Web</span>
             <span class="logo-secondary">Studio</span></a
           >
           <nav class="navigation">
             <ul class="header1">
               <li class="agencja">
-                <a class="link" href="/goit-markup-hw-04/index.html">Agencja</a>
+                <div class="now">
+                  <a class="link" href="/goit-markup-hw-05/index.html"
+                    >Agencja</a
+                  >
+                </div>
               </li>
               <li class="portfolio">
-                <a class="link" href="/goit-markup-hw-04/portfolio.html"
+                <a class="link" href="/goit-markup-hw-05/portfolio.html"
                   >Portfolio</a
                 >
               </li>
@@ -66,7 +70,9 @@
       <section class="title-background">
         <!--Hero-->
         <h1 class="title">EFEKTYWNE ROZWIĄZANIA DLA WASZEGO BIZNESU</h1>
-        <button class="button-order" type="button">Zamów usługe</button>
+        <button class="button-order" type="button" data-modal-open>
+          Zamów usługe
+        </button>
       </section>
       <section class="section fix">
         <div class="container">
@@ -144,6 +150,7 @@
                 width="370"
                 height="294"
               />
+              <p class="what-we-do-description">Aplikacje komputerowe</p>
             </li>
             <li class="what-we-doing-img">
               <img
@@ -152,6 +159,7 @@
                 width="370"
                 height="294"
               />
+              <p class="what-we-do-description">Aplikacje mobilne</p>
             </li>
             <li class="what-we-doing-img">
               <img
@@ -160,6 +168,7 @@
                 width="370"
                 height="294"
               />
+              <p class="what-we-do-description">Rozwiązania graficzne</p>
             </li>
           </ul>
         </div>
@@ -405,7 +414,7 @@
     <footer>
       <div class="container footer">
         <div class="footer-addres">
-          <a class="link logo logo-footer" href="/goit-markup-hw-04/index.html"
+          <a class="link logo logo-footer" href="/goit-markup-hw-05/index.html"
             ><span class="logo-first">Web</span>
             <span class="logo-three">Studio</span></a
           >
@@ -467,5 +476,15 @@
         </div>
       </div>
     </footer>
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button type="button" class="modal-close" data-modal-close>
+          <svg width="18px" height="18px">
+            <use href="images/icons.svg#icon-close-black-18dp-2-1"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
