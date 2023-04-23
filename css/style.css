@@ -94,6 +94,9 @@ body {
   background-color: var(--active-color);
   margin-top: 28px;
 }
+.now-1{
+  color: var(--active-color);
+}
 a {
   text-decoration: none;
 }
@@ -413,15 +416,17 @@ img {
   fill: #afb1b8;
   display: flex;
   padding: 16px 32px;
+   border: 1px solid #afb1b8;
+    border-radius: 4px;
 }
 .clients-icon-background {
   width: 170px;
-  border: 1px solid #afb1b8;
-  border-radius: 4px;
+ 
 }
 .clients-icon:hover,
 .clients-icon:focus {
   fill: var(--active-color);
+  border-color: var(--active-color);
   cursor: pointer;
    transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -492,6 +497,7 @@ flex-direction: row-reverse;
 }
 .modal-close {
   display: flex;
+  cursor:pointer;
   align-items: center;
   justify-content: center;
   width: 30px;
@@ -500,8 +506,12 @@ flex-direction: row-reverse;
    border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 1);
- 
 }
+.modal-close:hover{
+    fill: var(--active-color);
+    border-color: var(--active-color);
+}
+
 .is-hidden .modal{
    transform: translate(-50%, -50%) scale(0)
 }
